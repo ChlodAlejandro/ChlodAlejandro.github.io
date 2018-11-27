@@ -1,0 +1,61 @@
+@font-face {
+    font-family: Determination Sans;
+    src: local("Determination Sans"),
+        url(DeterminationSansWeb.woff);
+}
+@font-face {
+  font-family: Whitney;
+  src: url("https://discordapp.com/assets/d153359b5d87601d2b9c708b7ae2db02.woff") format("woff");
+  font-weight: 400;
+}
+body {
+    font-family: "Whitney", sans-serif;
+    background-color: #23272A;
+    color: white;
+}
+a, a:link, a:visited, a:active, a:focus {
+    text-decoration: none;
+    color: #7289DA;
+    transition: all .2s ease-in-out;
+}
+a:hover {
+    color: #FFF;
+}
+h1 {
+    color: #7289DA;
+}
+h4 {
+    font-size: 0.5em;
+    font-weight: normal;
+}
+h4 img {
+    transform: translateY(5px);
+    width: 1em;
+    height: auto;
+    margin: 0 0.25em;
+}
+.linkspanel {
+    padding: 5px;
+    height: 50px;
+}
+.linkspanel a button {
+    text-align: center;
+    box-sizing: border-box;
+    font-family: "Whitney", sans-serif;
+    color: white;
+    background-color: #7289DA;
+    border: none;
+    border-radius: 10px;
+    width: 18%;
+    height: auto;
+    padding: 2%;
+    margin: 0 0.5%;
+    font-weight: bold;
+    transition: border .1s ease-in-out, background-color .25s ease-in-out, color .25s ease-in-out;
+    cursor: pointer;
+}
+.linkspanel a button:hover {
+    background-color: white;
+    color: #7289DA;
+    border: #7289DA 3px solid;
+}
