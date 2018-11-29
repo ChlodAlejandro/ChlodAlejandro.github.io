@@ -59,3 +59,16 @@ h4 img {
     color: #7289DA;
     border: #7289DA 3px solid;
 }
+img.logo {
+	width: 30%;
+	height: auto;
+	border-radius: 50%;
+	border: 10px solid #151719;
+}
+div.header > img.logo {
+	float: left;
+	width: 15%;
+	height: auto;
+	border: 5px solid #151719;
+	margin-right: 5%;
+}
