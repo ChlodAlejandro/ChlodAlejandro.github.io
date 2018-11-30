@@ -8,10 +8,17 @@
   src: url("https://discordapp.com/assets/d153359b5d87601d2b9c708b7ae2db02.woff") format("woff");
   font-weight: 400;
 }
+@font-face {
+  font-family: Whitney;
+  src: url("/assets/2e004dd717cdc58b9ccb361d286ebbce.woff") format("woff");
+  font-weight: 700;
+}
 body {
     font-family: "Whitney", sans-serif;
     background-color: #23272A;
     color: white;
+    margin: 0;
+    padding: 0;
 }
 a, a:link, a:visited, a:active, a:focus {
     text-decoration: none;
@@ -33,6 +40,9 @@ h4 img {
     width: 1em;
     height: auto;
     margin: 0 0.25em;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
 }
 .linkspanel {
     padding: 5px;
@@ -61,6 +71,31 @@ h4 img {
     border: #7289DA 3px solid;
 	transform: scale(1.1);
 }
+
+a button.link {
+   text-align: center;
+   box-sizing: border-box;
+   font-family: "Whitney", sans-serif;
+   color: white;
+   background-color: #7289DA;
+   border: #7289DA 3px solid;
+   border-radius: 10px;
+   height: auto;
+   padding: 2%;
+   margin: 0;
+   font-weight: bold;
+   transition: transform .1s ease-in-out, background-color .25s ease-in-out, color .25s ease-in-out;
+   cursor: pointer;
+   transform: none;
+}
+a button.link:hover {
+   transform: scale(1.1);
+}
+a button.link:not(.white):hover {
+   background-color: white;
+   color: #7289DA;
+   border: #7289DA 3px solid;
+}
 table {
     width: 100%;
 }
@@ -82,4 +117,19 @@ div.header > img.logo {
 	height: auto;
 	border: 5px solid #151719;
 	margin-right: 5%;
+}
+img.dot {
+    height: 1em;
+    margin-right: 0.5em;
+    width: auto;
+}
+img.mini-logo {
+    height: 2em;
+    width: auto;
+}
+.fullw {
+    width: 100%;
+}
+.fullh {
+    height: 100%;
 }
