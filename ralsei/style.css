@@ -44,20 +44,31 @@ h4 img {
     font-family: "Whitney", sans-serif;
     color: white;
     background-color: #7289DA;
-    border: none;
+    border: #7289DA 3px solid;
     border-radius: 10px;
     width: 18%;
     height: auto;
     padding: 2%;
     margin: 0 0.5%;
     font-weight: bold;
-    transition: border .1s ease-in-out, background-color .25s ease-in-out, color .25s ease-in-out;
+    transition: transform .1s ease-in-out, background-color .25s ease-in-out, color .25s ease-in-out;
     cursor: pointer;
+	transform: none;
 }
 .linkspanel a button:hover {
     background-color: white;
     color: #7289DA;
     border: #7289DA 3px solid;
+	transform: scale(1.1);
+}
+table {
+    width: 100%;
+}
+table * {
+    font-size: 0.9em;
+}
+table td {
+    padding: 1% 0;
 }
 img.logo {
 	width: 30%;

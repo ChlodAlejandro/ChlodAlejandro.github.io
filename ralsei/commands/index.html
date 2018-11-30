@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Ralsei Bot</title>
+		<link rel="shortcut icon" href="../images/logo.ico"/>
 		<link href="../style.css" rel="stylesheet" type="text/css">
         <style>
             body {
@@ -15,18 +16,15 @@
 			    padding: 2%;
 			    font-size: 1.5em;
 			}
-            .linkspanel {
-                margin-left: 17.5%;
-            }
-            table {
-                width: 100%;
-            }
-            table * {
-                font-size: 0.9em;
-            }
-            table td {
-                padding: 1% 0;
-            }
+			.linkspanel {
+			    margin-left: 17.5%;
+			}
+			blue {
+				color: #0080ff;
+			}
+			yellow {
+				color: yellow;
+			}
         </style>
 	</head>
 	<body>
@@ -38,18 +36,23 @@
 			</div>
 			<div class="linkspanel">
 				<a href="../index.html"><button>HOME</button></a>
-				<a href=""><button>COMMANDS</button></a>
+				<a href=""><button>HELP</button></a>
 				<a href="../about/index.html"><button>ABOUT</button></a>
 				<a href="https://discordapp.com/api/oauth2/authorize?client_id=513344063106187270&permissions=59398&scope=bot"><button>INVITE</button></a>
 			</div>
-            <h2>Commands</h2>
+			<h2>Introduction</h2>
+			<p>Ralsei can automatically identify its name in normal conversations. Therefore, it is possible for Ralsei to respond when he is being talked about. If you wish, you may also summon Ralsei using the !ralsei command.
+            <h2 id="commands">Commands</h2>
             <table>
                 <tr>
                     <th>Command</th>
                     <th>Description</th>
                 </tr>
+				<tr>
+					<td colspan=2>Commands that are marked <blue>blue</blue> will be replied to using a text box with no face. Commands that are marked <yellow>yellow</yellow> will not be replied to using a text box.</td>
+				</tr>
                 <tr>
-                    <td>!ralsei help</td>
+                    <td><yellow>!ralsei help</yellow></td>
                     <td>Displays instructions on using Ralsei.</td>
                 </tr>
                 <tr>
@@ -65,7 +68,7 @@
                     <td>Confess your feelings of admiration to Ralsei.</td>
                 </tr>
                 <tr>
-                    <td>!ralsei hug &lt;name&gt;</td>
+                    <td><blue>!ralsei hug &lt;name&gt;</blue></td>
                     <td>Hug a name. Does not work with usernames (yet.) Bonus points for special names.</td>
                 </tr>
                 <tr>
@@ -80,14 +83,25 @@
                     <td>!ralsei dbots</td>
                     <td>Show Discord Bots statistics.</td>
                 </tr>
+                <tr>
+                    <td>!ralsei ping</td>
+                    <td>Show Discord Bots statistics.</td>
+                </tr>
+                <tr>
+                    <td>!ralsei ??????</td>
+                    <td>Hidden command.<blockquote><i>To access the chad, you must be glad.<br/>The name for the ship that sails, are small yet bad...</i></blockquote></td>
+                </tr>
             </table>
-            <h2>Automatic Recognition</h2>
+            <h2 id="auto">Automatic Recognition</h2>
             <p>These messages will appear if Ralsei is used in a phrase. This commonly leads to a response. Any capitalization works in triggering these responses.</p>
             <table>
                 <tr>
                     <th>Trigger</th>
                     <th>Description</th>
                 </tr>
+				<tr>
+					<td colspan=2>Phrases that are marked <blue>blue</blue> will be replied to using a text box with no face. Phrases that are marked <yellow>yellow</yellow> will not be replied to using a text box.</td>
+				</tr>
                 <tr>
                     <td>&lt;greeting&gt; ralsei OR ralsei &lt;greeting&gt;</td>
                     <td>Make Ralsei say hello.</td>
@@ -101,7 +115,11 @@
                     <td>Confess your feelings of admiration to Ralsei.</td>
                 </tr>
                 <tr>
-                    <td>hug me ralsei</td>
+                    <td>thank you ralsei OR similar</td>
+                    <td>Give thanks to Ralsei.</td>
+                </tr>
+                <tr>
+                    <td><blue>hug me ralsei</blue></td>
                     <td>Make Ralsei hug you. Custom names are only accessible through the command.</td>
                 </tr>
                 <tr>
