@@ -100,7 +100,7 @@ table {
     width: 100%;
 }
 table * {
-    font-size: 0.9em;
+    font-size: 0.95em;
 }
 table td {
     padding: 1% 0;
@@ -134,7 +134,7 @@ img.mini-logo {
     height: 100%;
 }
 
-small {
+.small {
     font-size: 0.8em;
 }
 
@@ -142,4 +142,8 @@ small {
     margin-top: 5%;
     padding: 4% 0;
     border-top: 5px solid #43474c;
+}
+
+.centered {
+    text-align: center;
 }
