@@ -9,10 +9,11 @@
   font-weight: 400;
 }
 @font-face {
-  font-family: Whitney;
-  src: url("/assets/2e004dd717cdc58b9ccb361d286ebbce.woff") format("woff");
-  font-weight: 700;
+  font-family: Whitney-Bold;
+  src: url("https://discordapp.com/assets/2e004dd717cdc58b9ccb361d286ebbce.woff") format("woff");
+  font-weight: 400;
 }
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
 body {
     font-family: "Whitney", sans-serif;
     background-color: #23272A;
@@ -146,4 +147,17 @@ img.mini-logo {
 
 .centered {
     text-align: center;
+}
+
+b {
+    font-family: "Whitney-Bold";
+    font-weight: normal;
+}
+
+.code {
+    font-family: "Inconsolata", monospace;
+    font-size: 0.8em;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 0.5em;
+    padding: 0.2em;
 }
