@@ -90,6 +90,12 @@
 				border-radius: 0.5em;
 				padding: 0.5em;
 			}
+			.note-warn {
+				background-color: rgba(255, 255, 255, 0.1);
+				border-left: 5px solid white;
+				border-radius: 0.5em;
+				padding: 0.5em;
+			}
         </style>
 	</head>
 	<body>
@@ -106,14 +112,22 @@
 				<a href="../invite"><button>INVITE</button></a>
 			</div>
 			<h2 id="commands">Bot Command Help</h2>
+			<h4>This page requires JavaScript.</h4>
 			<p>This page contains clearer details on Ralsei and his commands. Click on a command to see more information about it.</p>
             <p>The prefix used here is "!ralsei". This may be different based on your server configuration. Also ensure that Ralsei is given the correct permissions before using him. If you run a command that Ralsei cannot reply to due to insufficient permissions, the command will fail silently and will not inform you of the error.</p>
             <p>Arguments encapsulated in <span class="args">&lt;angle brackets&gt;</span> are required while those encapsulated in <span class="args">[hard brackets]</span> are optional.</p>
             <p>Each response has 10 or more variations. Commands marked <span class="norls">blue</span> are not replied to using a text box with Ralsei's character. Commands marked <span class="nobox">yellow</span> are not replied to using a text box. Commands with a green dot (<img class="secret dot" src="images/secret.png">) contains one or more rare secret response(s).</p>
+			<p><b>Click on a command to display more information about it.</b></p>
             <div class="command" id="help">
                 <div class="keyword nobox"><table><tr><td>!ralsei help</td><td class="note">informative</td></tr></table></div>
                 <div class="info">
                     <p>Get a link to the detailed commands page (this page.)</p>
+                </div>
+            </div>
+			<div class="command" id="characters">
+                <div class="keyword nobox"><table><tr><td>!ralsei characters</td><td class="note">informative</td></tr></table></div>
+                <div class="info">
+                    <p>Get a link to a page with all <a href="https://demirramon.com/en/help/undertale_text_box_generator_dev#char-codesr">usable characters and expressions</a> for <a href="https://demirramon.com/en/generators/undertale_text_box_generator">Demirramon's Undertale Text Box Generator</a>. These characters may be used in the <span class="code">!ralsei say</span> command.</p>
                 </div>
             </div>
 			<div class="command" id="bot">
@@ -195,9 +209,24 @@
 			<div class="command" id="dbots">
                 <div class="keyword"><table><tr><td>!ralsei dbots</td><td class="note">analytics</td></tr></table></div>
                 <div class="info">
+                    <p>Show how many points Ralsei has on the Discord Bot List.</p>
+					<a href="https://discordbots.org/bot/513344063106187270" >
+					  <img src="https://discordbots.org/api/widget/upvotes/513344063106187270.svg" alt="Ralsei Upvote COunt" />
+					</a>
+                </div>
+            </div>
+			<div class="command" id="votes">
+                <div class="keyword"><table><tr><td>!ralsei vote</td><td class="note">analytics</td></tr></table></div>
+                <div class="info">
+                    <p>Get a link to the <a href="https://bit.ly/RalseiDBL">Discord Bot List</a> profile.</p>
+                </div>
+            </div>
+			<div class="command" id="servers">
+                <div class="keyword"><table><tr><td>!ralsei servers</td><td class="note">analytics</td></tr></table></div>
+                <div class="info">
                     <p>Show how many servers Ralsei is running on.</p>
 					<a href="https://discordbots.org/bot/513344063106187270" >
-					  <img src="https://discordbots.org/api/widget/servers/513344063106187270.svg" alt="Ralsei" />
+					  <img src="https://discordbots.org/api/widget/servers/513344063106187270.svg" alt="Ralsei Server Count" />
 					</a>
                 </div>
             </div>
@@ -259,8 +288,8 @@
                 </div>
             </div>
 			<h2 id="configuration">Configuration Manager</h2>
-			<p>For v1.1, a configuration system will be added. The configuration manager handles your server's configuration. It can modify values that determine how Ralsei runs on your server.</p>
-			<p>Please make sure that Ralsei has the ability to manage messages for the swear filter to work. The right part of the command indicates the permission required to make changes to that command.</p>
+			<p>The configuration manager handles your server's configuration. It can modify values that determine how Ralsei runs on your server.</p>
+			<p>The right area of the category indicates the permission required to make changes to that command.</p>
 			<p>To edit the configuration, run <span class="code">!ralsei cfg &lt;category&gt;</span> where <span class="code">&lt;category&gt;</span> refers to those listed below.</p>
 			<div class="command" id="cfg-prefix">
                 <div class="keyword"><table><tr><td>prefix <span class="args">&lt;keyword&gt;</span> <span class="args">&lt;with space&gt;</span></td><td class="note">Manage Server</td></tr></table></div>
@@ -286,134 +315,12 @@
 		            </div>
                 </div>
             </div>
-			<!-- NOT YET IMPLEMENTED <div class="command" id="cfg-sf">
-                <div class="keyword"><table><tr><td>swearfilter</td><td class="note">Manage Server</td></tr></table></div>
-                <div class="info">
-                    <p>Modify the settings for Ralsei's swear filter on your server.</p>
-					<div class="command" id="cfg-sf-enabled">
-		                <div class="keyword"><table><tr><td>enabled <span class="args">&lt;true/false&gt;</span></td><td class="note">Manage Server</td></tr></table></div>
-		                <div class="info">
-		                    <p>Should the swear filter be enabled?</p>
-							<b>Type:</b> <span class="code">boolean (true/false)</span><br/>
-							<b>Default:</b> <span class="code">false</span><br/>
-							<b>Example:</b> <span class="code">!ralsei cfg swearfilter enabled true</span><br/>
-		                </div>
-		            </div>
-					<div class="command" id="cfg-sf-add">
-		                <div class="keyword"><table><tr><td>add <span class="args">&lt;word&gt; &lt;tier&gt;</span></td><td class="note">Manage Server</td></tr></table></div>
-		                <div class="info">
-		                    <p>Add a word to the swear word dictionary.</p>
-							<b>Example:</b> <span class="code">!ralsei cfg swearfilter add baloney 0</span><br/>
-							<div class="command" id="cfg-sf-add-word">
-				                <div class="keyword"><table><tr><td>word</td><td class="note">string</td></tr></table></div>
-				                <div class="info">
-				                    <p>The word to censor out.</p>
-				                </div>
-				            </div>
-							<div class="command" id="cfg-sf-add-tier">
-								<div class="keyword"><table><tr><td>tier</span></td><td class="note">tier</td></tr></table></div>
-								<div class="info">
-									<p>The swear word tier of the word.</p>
-									<b>Limitations:</b> From 0 to 3.<br/>
-									<b>Suggestion:</b>
-									<ul>
-										<li>0 - Light swear words.</li>
-										<li>1 - Potentially unwanted swear words.</li>
-										<li>2 - Heavily profane swear words.</li>
-										<li>3 - Heavily offensive swear words directed to a group of people.</li>
-									</ul>
-								</div>
-							</div>
-		                </div>
-		            </div>
-					<div class="command" id="cfg-sf-remove">
-		                <div class="keyword"><table><tr><td>remove <span class="args">&lt;word&gt; &lt;tier&gt;</span></td><td class="note">Manage Server</td></tr></table></div>
-		                <div class="info">
-		                    <p>Remove a word from the swear word dictionary.</p>
-							<b>Example:</b> <span class="code">!ralsei cfg swearfilter remove baloney 0</span><br/>
-							<div class="command" id="cfg-sf-add-word">
-				                <div class="keyword"><table><tr><td>word</td><td class="note">string</td></tr></table></div>
-				                <div class="info">
-				                    <p>The word to censor out.</p>
-				                </div>
-				            </div>
-							<div class="command" id="cfg-sf-add-tier">
-								<div class="keyword"><table><tr><td>tier</span></td><td class="note">integer</td></tr></table></div>
-								<div class="info">
-									<p>The swear word tier of the word.</p>
-									<b>Limitations:</b> From 0 to 3.<br/>
-									<b>Suggestion:</b>
-									<ul>
-										<li>0 - Light swear words.</li>
-										<li>1 - Potentially unwanted swear words.</li>
-										<li>2 - Heavily profane swear words.</li>
-										<li>3 - Heavily offensive swear words directed to a group of people.</li>
-									</ul>
-								</div>
-							</div>
-		                </div>
-		            </div>
-					<div class="command" id="cfg-sf-delete">
-		                <div class="keyword"><table><tr><td>delete <span class="args">&lt;type&gt;</span></td><td class="note">Manage Server</td></tr></table></div>
-		                <div class="info">
-		                    <p>Ralsei will delete swear words depending on the given setting.</p>
-							<div class="command" id="cfg-sf-delete">
-				                <div class="keyword"><table><tr><td>type</td><td class="note"></td></tr></table></div>
-				                <div class="info">
-				                    <p>The setting Ralsei will follow in deleting the message.</p>
-									<b>Type:</b> <span class="code">integer</span><br/>
-									<b>Default:</b> <span class="code">0</span><br/>
-									<b>Equivalence:</b>
-									<ul>
-										<li>0 - Ignore.</li>
-										<li>1 - Delete all messages with words of tier 0 or worse.</li>
-										<li>2 - Delete all messages with words of tier 1 or worse.</li>
-										<li>3 - Delete all messages with words of tier 2 or worse.</li>
-										<li>4 - Delete all messages with words of tier 3.</li>
-									</ul>
-				                </div>
-				            </div>
-		                </div>
-		            </div>
-					<div class="command" id="cfg-sf-limit">
-		                <div class="keyword"><table><tr><td>limit</td><td class="note">Manage Server</td></tr></table></div>
-		                <div class="info">
-		                    <p>Modify the swear filter limits.</p>
-							<div class="command" id="cfg-sf-limit-enabled">
-				                <div class="keyword"><table><tr><td>enabled <span class="args">&lt;true/false&gt;</span></td><td class="note">Manage Server</td></tr></table></div>
-				                <div class="info">
-				                    <p>Should the swear word limiter be enabled?</p>
-									<b>Type:</b> <span class="code">boolean (true/false)</span><br/>
-									<b>Default:</b> <span class="code">true</span><br/>
-				                </div>
-				            </div>
-							<div class="command" id="cfg-sf-limit-count">
-				                <div class="keyword"><table><tr><td>count <span class="args">&lt;new limit count&gt;</span></td><td class="note">Manage Server</td></tr></table></div>
-				                <div class="info">
-				                    <p>How many swear words will the limit allow until triggering?</p>
-									<b>Type:</b> <span class="code">integer</span><br/>
-									<b>Default:</b> <span class="code">10</span><br/>
-				                </div>
-				            </div>
-							<div class="command" id="cfg-sf-limit-time">
-				                <div class="keyword"><table><tr><td>time <span class="args">&lt;time string&gt;</span></td><td class="note">Manage Server</td></tr></table></div>
-				                <div class="info">
-				                    <p>Within what time should the bot be counting the limit up?</p>
-									<p>e.g. "1h" means the bot will look for &lt;x&gt; swears within the last hour.</p>
-									<b>Type:</b> <span class="code">time string</span><br/>
-									<b>Default:</b> <span class="code">1h</span><br/>
-				                </div>
-				            </div>
-						</div>
-		            </div>
-                </div>
-            </div> -->
 			<div class="command" id="cfg-quicksay">
-				<div class="keyword"><table><tr><td>quicksay <span class="args">&lt;operation&gt;</span></td><td class="note">Manage Channels</td></tr></table></div>
+				<div class="keyword"><table><tr><td>quicksay <span class="args">&lt;operation&gt;</span></td><td class="note">Varied</td></tr></table></div>
 				<div class="info">
 					<p>Modify the Ralsei quick responses for your server.</p>
 					<div class="command" id="cfg-quicksay-list">
-						<div class="keyword"><table><tr><td>list</td><td class="note">Manage Channels</td></tr></table></div>
+						<div class="keyword"><table><tr><td>list</td><td class="note">Send Messages</td></tr></table></div>
 						<div class="info">
 							<p>List the quick responses for that server.</p>
 						</div>
@@ -442,31 +349,42 @@
 					<div class="command" id="cfg-quicksay-import">
 						<div class="keyword"><table><tr><td>import <span class="args">&lt;responses JSON string&gt;</span></td><td class="note">Manage Channels</td></tr></table></div>
 						<div class="info">
-							<p>Import quick responses from a JSON string containing responses.</p>
-
+							<p>Import quick responses from a Base64-encoded string containing responses.</p>
+							<b>Type:</b> <span class="code">string (base64)</span>
 						</div>
 					</div>
 					<div class="command" id="cfg-quicksay-export">
-						<div class="keyword"><table><tr><td>export</td><td class="note">Manage Channels</td></tr></table></div>
+						<div class="keyword"><table><tr><td>export <span class="args">[json/base64]</span></td><td class="note">Manage Channels</td></tr></table></div>
 						<div class="info">
-							<p>Export quick responses into a JSON string containing responses.</p>
-
+							<p>Export Base64-encoded quick responses to Hastebin and get a link to the paste.</p>
+							<p>You can specify the format the exported string will be in. By default, this will be Base64, but you can specify the bot to export the responses in JSON format.</p>
+							<p class="note-warn">NOTE: The importer only accepts Base64 strings, so before importing a paste in JSON format, encode it using a <a href="https://base64encode.com">Base64 encoder</a>.</p>
+							<p>This is the same list of responses exported in two formats.</p>
+							<p>
+								<span class="code">!ralsei cfg quicksay export [base64]</span><br/>
+								Base64: <a href="https://hastebin.com/iqetonagum">https://hastebin.com/iqetonagum</a>
+							</p>
+							<p>
+								<span class="code">!ralsei cfg quicksay export JSON</span><br/>
+								JSON: <a href="https://hastebin.com/ipuyofujel">https://hastebin.com/ipuyofujel</a>
+							</p>
+							<b>Type:</b> <span class="code">string (json/base64)</span>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="command" id="cfg-block">
-				<div class="keyword"><table><tr><td>block <span class="args">&lt;operation&gt;</span></td><td class="note">Manage Channels</td></tr></table></div>
+				<div class="keyword"><table><tr><td>block <span class="args">&lt;list/set&gt;</span></td><td class="note">Varied</td></tr></table></div>
 				<div class="info">
 					<p>Stop built-in Ralsei commands from running.</p>
 					<div class="command" id="cfg-block-list">
-						<div class="keyword"><table><tr><td>list</td><td class="note"></td></tr></table></div>
+						<div class="keyword"><table><tr><td>list</td><td class="note">Send Messages</td></tr></table></div>
 						<div class="info">
 							<p>Show the list of active blocked commands.</p>
 						</div>
 					</div>
 					<div class="command" id="cfg-block-set">
-						<div class="keyword"><table><tr><td>set <span class="args">&lt;command&gt;</span> <span class="args">&lt;blocked&gt;</span></td><td class="note"></td></tr></table></div>
+						<div class="keyword"><table><tr><td>set <span class="args">&lt;command&gt;</span> <span class="args">&lt;blocked&gt;</span></td><td class="note">Send Messages</td></tr></table></div>
 						<div class="info">
 							<p>Set if a command should be blocked or not.</p>
 							<b>Type:</b> <span class="code">boolean (true/false)</span>
@@ -494,6 +412,95 @@
 				<div class="info">
 					<p>Should Ralsei warn lewders?</p>
 					<b>Type:</b> <span class="code">boolean (true/false)</span>
+				</div>
+			</div>
+			<div class="command" id="cfg-perms">
+				<div class="keyword"><table><tr><td>permissions <span class="args">&lt;list/set&gt;</span></td><td class="note">Manage Server</td></tr></table></div>
+				<div class="info">
+					<p>Mange the required permissions to change configuration values. In order to change a configuration value, the user must have the permission specified either by the default permissions or by the user-set permissions, modified by this category.</p>
+					<div class="command" id="cfg-lewd">
+						<div class="keyword"><table><tr><td>list</td><td class="note">Manage Server</td></tr></table></div>
+						<div class="info">
+							<p>Show the required permissions to change configuration values.</p>
+						</div>
+					</div>
+					<div class="command" id="cfg-perms-set">
+						<div class="keyword"><table><tr><td>set <span class="args">&lt;command code&gt; &lt;permission&gt;</span></td><td class="note">Manage Server</td></tr></table></div>
+						<div class="info">
+							<p>Change the required permission to change a configuration value.</p>
+							<div class="command" id="cfg-perms-commandcodes">
+								<div class="keyword"><table><tr><td>command code</td></tr></table></div>
+								<div class="info">
+									<p>The command code to change. The command codes can be found in the list below.</p>
+									<b>Type:</b> <span class="code">string</span>
+									<p><b>COMMAND CODES</b></p>
+									<table class="enumList">
+										<thead>
+											<tr><td>Code</td><td>Description</td></tr>
+										</thead>
+										<tbody>
+											<tr><td><span class="code">prefix</span></td><td>Modify the prefix.</td></tr>
+											<tr><td><span class="code">block-list</span></td><td>Show the list of blocked commands.</td></tr>
+											<tr><td><span class="code">block-set</span></td><td>Set the list of blocked commands.</td></tr>
+											<tr><td><span class="code">quicksay-list</span></td><td>Show the list of quick responses.</td></tr>
+											<tr><td><span class="code">quicksay-add</span></td><td>Add to the list of quick responses.</td></tr>
+											<tr><td><span class="code">quicksay-remove</span></td><td>Remove from the list of quick responses.</td></tr>
+											<tr><td><span class="code">quicksay-clear</span></td><td>Clear the list of quick responses.</td></tr>
+											<tr><td><span class="code">quicksay-import</span></td><td>Import into the list of quick responses.</td></tr>
+											<tr><td><span class="code">quicksay-export</span></td><td>Export the list of quick responses.</td></tr>
+											<tr><td><span class="code">lewdwarn</span></td><td>Modify the lewd warning.</td></tr>
+											<tr><td><span class="code">permissions</span></td><td>Modify permission requirements.</td></tr>
+										</tbody>
+									</table>
+									<p class="warn">WARNING: Giving a user permission to modify the minimum required permissions is very dangerous. Only give this power to those who you trust.</p>
+								</div>
+							</div>
+							<div class="command" id="cfg-perms-permissions">
+								<div class="keyword"><table><tr><td>permission</td></tr></table></div>
+								<div class="info">
+									<p>The permission required by the user to run the command. The permissions can be found in the list below.</p>
+									<b>Type:</b> <span class="code">string</span>
+									<p><b>PERMISSIONS</b></p>
+									<table class="enumList">
+										<thead>
+											<tr><td>Permission</td><td>Description</td></tr>
+										</thead>
+										<tbody>
+											<tr><td><span class="code">ADMINISTRATOR</span></td><td>Has all permissions, and bypasses all channel overwrites.</td></tr>
+											<tr><td><span class="code">CREATE_INSTANT_INVITE</span></td><td>Create server invitations.</td></tr>
+											<tr><td><span class="code">KICK_MEMBERS</span></td><td>Kick members.</td></tr>
+											<tr><td><span class="code">BAN_MEMBERS</span></td><td>Ban members.</td></tr>
+											<tr><td><span class="code">MANAGE_CHANNELS</span></td><td>Edit and reorder channels.</td></tr>
+											<tr><td><span class="code">MANAGE_GUILD</span></td><td>Edit server name, region and information.</td></tr>
+											<tr><td><span class="code">ADD_REACTIONS</span></td><td>Add reactions to messages.</td></tr>
+											<tr><td><span class="code">VIEW_AUDIT_LOG</span></td><td>View the Audit Log.</td></tr>
+											<tr><td><span class="code">PRIORITY_SPEAKER</span></td><td>Use Priority Speaker.</td></tr>
+											<tr><td><span class="code">VIEW_CHANNEL</span></td><td>View the channel.</td></tr>
+											<tr><td><span class="code">SEND_MESSAGES</span></td><td>Send messages.</td></tr>
+											<tr><td><span class="code">SEND_TTS_MESSAGES</span></td><td>Send a TTS message.</td></tr>
+											<tr><td><span class="code">MANAGE_MESSAGES</span></td><td>Delete messages and reactions.</td></tr>
+											<tr><td><span class="code">EMBED_LINKS</span></td><td>Embed links on messages.</td></tr>
+											<tr><td><span class="code">ATTACH_FILES</span></td><td>Attach files on messages.</td></tr>
+											<tr><td><span class="code">READ_MESSAGE_HISTORY</span></td><td>View messages posted before opening Discord.</td></tr>
+											<tr><td><span class="code">MENTION_EVERYONE</span></td><td>Mention <span class="code">@everyone</span> or <span class="code">@here</span></td></tr>
+											<tr><td><span class="code">USE_EXTERNAL_EMOJIS</span></td><td>Use emojis from other servers.</td></tr>
+											<tr><td><span class="code">CONNECT</span></td><td>Connect to a voice channel.</td></tr>
+											<tr><td><span class="code">SPEAK</span></td><td>Speak in a voice channel.</td></tr>
+											<tr><td><span class="code">MUTE_MEMBERS</span></td><td>Mute members across all voice channels.</td></tr>
+											<tr><td><span class="code">DEAFEN_MEMBERS</span></td><td>Deafen members across all voice channels.</td></tr>
+											<tr><td><span class="code">MOVE_MEMBERS</span></td><td>Move members between voice channels.</td></tr>
+											<tr><td><span class="code">USE_VAD</span></td><td>Use voice activity detection.</td></tr>
+											<tr><td><span class="code">CHANGE_NICKNAME</span></td><td>Change nickname of self.</td></tr>
+											<tr><td><span class="code">MANAGE_NICKNAMES</span></td><td>Change nicknames of others.</td></tr>
+											<tr><td><span class="code">MANAGE_ROLES</span></td><td>Manage roles and permissions.</td></tr>
+											<tr><td><span class="code">MANAGE_WEBHOOKS</span></td><td>Manage webhooks.</td></tr>
+											<tr><td><span class="code">MANAGE_EMOJIS</span></td><td>Manage server emojis.</td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="footer">
