@@ -142,6 +142,19 @@
                     <p>Get a link to the <a href="../support">Ralsei Bot Support Server</a>. There, you can give suggestions or issues about the bot.</p>
                 </div>
             </div>
+			<div class="command" id="report">
+                <div class="keyword nobox"><table><tr><td>!ralsei report/!ralsei suggest</td><td class="note">dropbox</td></tr></table></div>
+                <div class="info">
+                    <p>Report issues or suggest features regarding the bot using a built-in report system.</p>
+                </div>
+            </div>
+			<div class="command" id="suggest">
+                <div class="keyword nobox"><table><tr><td>!ralsei getreport/!ralsei getsuggest <span class="args">&lt;case ID&gt;</span></td><td class="note">dropbox</td></tr></table></div>
+                <div class="info">
+                    <p>Find out the status of a report or suggestion. Requires the case ID, provided after submitting a report.</p>
+					<b>Type:</b> <span class="code">string</span><br/>
+                </div>
+            </div>
 			<div class="command" id="greeting">
                 <div class="keyword"><table><tr><td>!ralsei <span class="args">&lt;greeting&gt;</span></td><td class="note">conversational</td></tr></table></div>
                 <div class="info">
@@ -450,6 +463,7 @@
 											<tr><td><span class="code">quicksay-export</span></td><td>Export the list of quick responses.</td></tr>
 											<tr><td><span class="code">lewdwarn</span></td><td>Modify the lewd warning.</td></tr>
 											<tr><td><span class="code">permissions</span></td><td>Modify permission requirements.</td></tr>
+											<tr><td><span class="code">unknown</span></td><td>Modify settings on showing the unknown command warning.</td></tr>
 										</tbody>
 									</table>
 									<p class="warn">WARNING: Giving a user permission to modify the minimum required permissions is very dangerous. Only give this power to those who you trust.</p>
@@ -501,6 +515,13 @@
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+			<div class="command" id="cfg-unknown">
+				<div class="keyword"><table><tr><td>unknown <span class="args">[true/false]</span></td><td class="note">Manage Channels</td></tr></table></div>
+				<div class="info">
+					<p>Should Ralsei warn users if they ran an unkown command?</p>
+					<b>Type:</b> <span class="code">boolean (true/false)</span>
 				</div>
 			</div>
 			<div class="footer">
